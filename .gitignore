@@ -1,0 +1,13 @@
+FWT_3525.pdf
+
+# camera_implementation
+camera_implementation/CNN_classification/variables/
+
+# wear_measurement
+wear_measurement/Datenbasis/
+wear_measurement/image_dataset.npy
+wear_measurement/mask_dataset.npy
+
+# tool_classification
+tool_classification/CNN_classification_new_Data/variables/
+tool_classification/Datenbasis/
