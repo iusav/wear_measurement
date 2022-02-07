@@ -1,13 +1,18 @@
 FWT_3525.pdf
+Additional_Database/
 
 # camera_implementation
 camera_implementation/CNN_classification/variables/
 
 # wear_measurement
 wear_measurement/Datenbasis/
-wear_measurement/image_dataset.npy
-wear_measurement/mask_dataset.npy
+wear_measurement/Testbilder/
+wear_measurement/__pycache__/
+wear_measurement/*.npy
+wear_measurement/*.npy
 
 # tool_classification
 tool_classification/CNN_classification_new_Data/variables/
 tool_classification/Datenbasis/
+tool_classification/Test_Images/
+tool_classification/training_1/

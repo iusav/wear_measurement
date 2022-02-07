@@ -28,8 +28,8 @@ image_dataset = []
 mask_dataset = []
 
 # Laden der Bilder als numpy Array
-image_dataset = np.load('image_dataset.npy')
-mask_dataset = np.load('mask_dataset.npy')
+image_dataset = np.load('image_dataset_data_aug_5_color.npy')
+mask_dataset = np.load('mask_dataset_data_aug_5_color.npy')
 
 # Überprüfung der Größe der Datensätze
 print(image_dataset.shape)

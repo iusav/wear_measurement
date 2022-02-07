@@ -27,7 +27,8 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 #data_dir ist der Dateipfad, in dem die Bilder bereit gestellt werden. Im Ordner sind weitere Ordner mit den Klassen
 #Wendeschneidplatte und Schaftfräser
-data_dir = r"Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Tools"
+#####data_dir = r"Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Tools"
+data_dir = '/home/anton/Programming/HIWI_wbk_German/wear_measurement/tool_classification/Datenbasis'
 data_dir = pathlib.Path(data_dir)
 
 #Anzahl der Bilder ausgeben lassen:

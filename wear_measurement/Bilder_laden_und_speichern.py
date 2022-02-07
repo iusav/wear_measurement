@@ -14,8 +14,11 @@ from matplotlib import pyplot as plt
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # Dateipfade in dem die Masken und Augmented Bilder liegen
-image_directory = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/Images_Masks_Subdir/Images/"
-mask_directory = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/Images_Masks_Subdir/Masks/"
+#####image_directory = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/Images_Masks_Subdir/Images/"
+#####mask_directory = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/Images_Masks_Subdir/Masks/"
+image_directory = "/home/anton/Programming/HIWI_wbk_German/wear_measurement/Additional_Database/Images/"
+mask_directory = "/home/anton/Programming/HIWI_wbk_German/wear_measurement/Additional_Database/Masks/"
+
 
 # Bestimmung der Bildergröße
 SIZE = 512

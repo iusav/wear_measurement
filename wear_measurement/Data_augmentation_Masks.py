@@ -11,10 +11,11 @@ from PIL import Image, ImageFilter, ImageEnhance
 import os
 
 # folder = Dateipfad, in dem Originalmasken gespeichert sind
-folder = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/New_Masks/"
-
+####folder = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/New_Masks/"
+folder = "/home/anton/Programming/HIWI_wbk_German/wear_measurement/wear_measurement/Datenbasis/Masks/"
 # copy_to_path = Dateipfad, in dem die Augmendet Bilder gespeicert werden sollen
-copy_to_path = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/Additional_Database_3_2/"
+#####copy_to_path = "Z:/Elements/Fabian/KIT/Bachelor_Arbeit/Database/Semantic_Segmentation/Additional_Database_3_2/"
+copy_to_path = "/home/anton/Programming/HIWI_wbk_German/wear_measurement/Additional_Database/Masks/"
 
 # Für Zoom Bilder um ...% beschneiden und auf benötigte Größe skalieren:
 cropbox=(51, 51, 461, 461)

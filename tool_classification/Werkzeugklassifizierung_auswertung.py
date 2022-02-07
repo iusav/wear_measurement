@@ -14,12 +14,15 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 #Bild zum Auswerten entweder mit Link aus Internet verwenden oder Dateipfadangeben:
 r = str()
-filepath = input('Enter Filepath: ')
-
+###filepath = input('Enter Filepath: ')
+filepath = "/home/anton/Programming/HIWI_wbk_German/wear_measurement/tool_classification/Test_Images/Test_004.jpg"
 if filepath.startswith('http'):
     filepath = tf.keras.utils.get_file(origin=filepath)
-elif filepath.startswith('Z:'):
-    filepath = r+filepath
+###elif filepath.startswith('Z:'):
+###    filepath = r+filepath
+else:
+
+    filepath = filepath
 
 #Bilder größe definieren:
 batch_size = 32
@@ -30,7 +33,7 @@ img_width = 512
 class_names = ['Schaftfräser', 'Wendeschneidplatte']
 
 #In CNN_classification sind die Daten aus dem trainierten Modell gespeichert und werden mit tf.keras.load_model geladen:
-loaded_model = tf.keras.models.load_model('CNN_classification')
+loaded_model = tf.keras.models.load_model('CNN_classification_new_Data')
 
 #Vorhersage des Programms:
 img = tf.keras.utils.load_img(filepath, target_size=(img_height, img_width))
