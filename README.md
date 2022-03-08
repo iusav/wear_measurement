@@ -134,51 +134,14 @@ $ python Werkzeugklassifizierung_auswertung.py
 ```
 
 ##### **Wear measurement script**
-##### *Data_Augmentation_Images.py*
-* Laden der Bilder aus dem Ordner, in dem die Originalbilder liegen
-```
-folder = "C:/.../.../Images"
-```
-* Festlegen des Ordners, indem die erweiterten Bilder gespeichert werden sollen
-```
-copy_to_path = "C:/.../.../Augmented_Images"
-```
-* Data Augmentation (Drehen um 10°, Drehen um 180°, Drehen um -10°, Gaussian Blur, Zoom um 20%, Kontrast erhöhen um 40%, Helligkeit erhöhen umd 20%)
-```sh
-$ python Data_Augmentation_Images.py
-```
-
-##### *Data_Augmentation_Masks.py*
-* Selbes vorgehen wie bei Data_Augmentation_Masks.py
-* Data Augmentation ohne Gaussian Blur, Kontrasterhöhung und Helligkeitserhöhung
-```sh
-$ python Data_Augmentation_Masks.py
-```
-
-##### *Bilder_laden_und_speichern.py*
-* Programm lädt die Bilder aus den Ordnern in richtiger Reihenfolge und speichert diese als numpy-Array ab.
-
-```
-np.save('image_dataset', image_dataset)
-np.save('mask_dataset', mask_dataset)
-```
-
-* Überprüfung, ob die Bilder zu den Masken passen (Plot)
-```sh
-$ python Bilder_laden_und_speichern.py
-```
 
 ##### *U_Net_Model.py*
 * Definieren des U-Net Modells
 
 ##### *Training_Semantic_Segmentation.py*
-* Laden der Erweiterten Datenbasis als Numpy Arrayimage_dataset = np.load('image_dataset.npy')
-  mask_dataset = np.load('mask_dataset.npy')
+* Laden der Bilder aus dem Ordner, in dem die Originalbilder liegen
+* Data Augmentation
 * U-Net Modell laden
-```
-def get_model():
-    return simple_unet_model(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS)
-```
 * Modell Trainieren
 ```sh
 $ python Training_Semantic_Segmentation.py
