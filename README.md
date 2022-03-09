@@ -74,7 +74,7 @@ git clone https://github.com/iusav/wear_measurement.git -b fabian_kohnle
 ------
 ##### **Camera implementation script**
 
-##### *Kalibrierung.py*
+##### *calibration.py*
 * Access camera
 * Crop the window to 960x960 pixels
 * When starting the program, the window with the camera section opens
@@ -84,15 +84,15 @@ git clone https://github.com/iusav/wear_measurement.git -b fabian_kohnle
 * Output the number of pixels between the distance
 * To close all windows press "Esc" for at least 1 sec.
 ```sh
-$ python Kalibrierung.py
+$ python calibration.py
 ```
 
-##### *Verschleißmessung_mit_Kamera.py*
+##### *camera_wear_measurement.py*
 ```sh
-$ python Verschleißmessung_mit_Kamera.py
+$ python camera_wear_measurement.py
 ```
 
-##### *Werkzeugklassifizierung_mit_Kamera.py*
+##### *camera_tool_classification.py*
 * Enter value from calibration.py in `calibration= ...`.
 * Load stored (trained) model
 ```
@@ -104,67 +104,71 @@ model = tf.keras.models.load_model('Name')
 * When closing the evaluation a new window appears where it is possible to measure the wear mark width manually, if wanted
 * Closing the window leads to a new start of the measurements (end of the wear measurement by holding down the Esc key)
 ```sh
-$ python Werkzeugklassifizierung_mit_Kamera.py
+$ python camera_tool_classification.py
 ```
 
 ##### **Tool classification script**
-##### *Werkzeugklassifizierung_training.py*
-* Zugriff auf den Überordner (z.B. "Tools")
-```
-data_dir = r"C:/.../.../Tools"
-```
-* Programm weiter ausführen (Training)
+##### *tool_class_training.py*
+* Run program further (Training)
 ```sh
-$ python Werkzeugklassifizierung_training.py
-```
-* Modell speichern
-```
-model.save('Modellname')
+$ python tool_class_training.py
 ```
 
-##### *Werkzeugklassifizierung_auswertung.py*
-* Dateipfad des Bildes eingeben (Enter Filepath:)
-* gespeichertes Modell laden
+##### *tool_class_evaluation.py*
+* Enter the file path of the image (Enter Filepath:)
+* Load saved model
 ```
 loaded_model = tf.keras.models.load_model('Modellname')
 ```
-* Auswertung der Prediction (Plot)
+* Prediction evaluation (Plot)
 ```sh
-$ python Werkzeugklassifizierung_auswertung.py
+$ python tool_class_evaluation.py
 ```
 
-##### **Wear measurement script**
+| Wendeschneidplatte | Schaftfräser | Wendeschneidplatte |
+| --- | --- | --- |
+| ![](example_data/tool_classification/Figure_1.jpg) | ![](example_data/tool_classification/Figure_2.jpg) | ![](example_data/tool_classification/Figure_3.jpg) |
+
+##### **Wear measurement script** 
 
 ##### *U_Net_Model.py*
-* Definieren des U-Net Modells
+* Defining the U-Net model
 
-##### *Training_Semantic_Segmentation.py*
-* Laden der Bilder aus dem Ordner, in dem die Originalbilder liegen
-* Data Augmentation
-* U-Net Modell laden
-* Modell Trainieren
+##### *segmentation_training.py*
+* Loading the images from the folder where the original images are located
+* Data augmentation
+* U-Net Modell loading
+* Modell Training
 ```sh
-$ python Training_Semantic_Segmentation.py
+$ python segmentation_training.py
 ```
-* Ergebnisse des Modells speichern
+* Saving results of the model
 ```
 model.save('Name')
 ```
-* Auswerten des Trainingsverlaufes (Accuracy/Loss)
-* IoU-Score berechnen
+* Evaluation of the training process (Accuracy/Loss)
+* Calculation of IoU score
 
-##### *Auswertung_Semantic_Segmentation.py*
-* Gespeichertes Modell laden
+##### *segmentation_evaluation.py*
+* Loading a saved model
 ```
 model = tf.keras.models.load_model('Name')
 ```
 ```sh
-$ python Auswertung_Semantic_Segmentation.py
+$ python segmentation_evaluation.py
 ```
-* Auszuwertendes Bild laden
+* Loading image to be evaluated
 ```
 test_img_other = cv2.imread("C:/.../.../Verschleissbild")
 ```
 
-* Wenn gewollt: Es kann eine manuell erstellte Maske geladen werden, um die Prediction mit der realen Verschleißfläche zu vergleichen (IoU-Score)
-* Plotten der Ergenisse
+* If desired: A manually created mask can be loaded to compare the prediction with the real wear surface (IoU score). 
+* Plotting of the results
+
+| Input --> Output |
+| --- | 
+| ![](example_data/wear_measurement/Figure_1.png) | 
+| --- | 
+| ![](example_data/wear_measurement/Figure_2.png) | 
+| --- | 
+| ![](example_data/wear_measurement/Figure_3.png) | 
