@@ -43,7 +43,7 @@ python -m venv env_wear_measurement
 
 2. Activate the virtual environment
 ```sh
-./env_wear_measurement/Scripts/activate
+.\env_fabian-gpu\Scripts\activate
 ```
 
 3. Install python packages

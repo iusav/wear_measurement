@@ -1,5 +1,4 @@
 FWT_3525.pdf
-Additional_Database/
 
 # camera_implementation
 camera_implementation/CNN_classification/variables/
@@ -8,8 +7,6 @@ camera_implementation/CNN_classification/variables/
 wear_measurement/Datenbasis/
 wear_measurement/Testbilder/
 wear_measurement/__pycache__/
-wear_measurement/*.npy
-wear_measurement/*.npy
 
 # tool_classification
 tool_classification/CNN_classification_new_Data/variables/
